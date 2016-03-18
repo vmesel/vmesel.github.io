@@ -10,10 +10,15 @@ permalink: /posts/
   <ul class="post-list">
     {% for post in site.posts %}
       <li>
+        <div style="margin:10px 0 10px 0;">
+
+
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
         <img src="{{ post.thumbnail }}" height="144" width="256" style="float:left;"/>
         <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}" style="float:left;margin-left:5px;">{{ post.title }}</a></h2>
       </li>
+      </div>
+      <div style="clear:both;"></div>
     {% endfor %}
   </ul>
 

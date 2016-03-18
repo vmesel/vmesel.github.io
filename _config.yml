@@ -1,8 +1,10 @@
 title: Vinícius Mesel
 email: vinicius@bigsp.com.br
 description: "Olá, este é um site que contém/conterá todos os meus trabalhos como developer, artista e alguns artigos que eu escreverei"
-baseurl: "http://vmesel.com/"
-url: "http://vmesel.com/" # the base hostname & protocol for your site
+baseurl: ""
+#baseurl: "http://vmesel.com/"
+url: ""
+#url: "http://vmesel.com/" # the base hostname & protocol for your site
 twitter_username: vmesel
 github_username:  vmesel
 markdown: kramdown

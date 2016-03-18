@@ -1,10 +1,10 @@
 ---
 published: true
-title: Um encurtador de URL novo, mas precisamos de sua ajuda!
+title: Precisamos de ajuda para o WP-A
 layout: post
 tags: [WP-A, Projetos]
 categories: [WP-A]
-thumbnail: http://www.ibnjuferi.net/wp-content/uploads/2010/04/url-shortener.png
+thumbnail: http://blog.andersonferro.com.br/wp-content/uploads/2014/03/Como-Criar-um-Encurtador-de-Links-e-Registrar-Dom%C3%ADnios-Gr%C3%A1tis-.jpg
 ---
 
 Olá galera, finalmente tenho o prazer de anunciar que o [WP-A.CO](http://wp-a.co), um projeto que venho estruturando há 2 anos(Está no  Github: http://www.github.com/vmesel/WP-A.CO/ ), finalmente saiu do papel com meu esforço total por enquanto... Eu preciso de ajuda, na verdade uma ajuda bem grande!
