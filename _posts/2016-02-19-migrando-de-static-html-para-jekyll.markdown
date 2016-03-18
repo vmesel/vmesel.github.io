@@ -4,7 +4,6 @@ title: Migrando de Static HTML para Jekyll
 layout: post
 thumbnail: http://timjames.me/img/jekyll/feature.jpg
 ---
-![Migrando de Static HTML para Jekyll](http://timjames.me/img/jekyll/feature.jpg)
 
 Bom, eu sou Vinicius Mesel, ainda sou desconhecido para uma grande galera na internet, portanto eu venho neste blog trazer algumas ideias de tecnologia e design web que eu estou ganhando neste meu tempo de trabalho neste maravilhoso ambiente da WEB.
 
