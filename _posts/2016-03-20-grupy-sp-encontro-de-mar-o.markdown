@@ -13,10 +13,11 @@ Eu não exagerei na descrição do evento, estou falando sério. O GruPy, além 
 ## Palestras
 
 No evento que ocorreu neste sábado(19/03/2016) nós tivemos a presença das seguintes palestras:
-  - Dynaconf - Tá Tranquilo! Tá Configurável! por <a href="https://github.com/rochacbruno">Bruno Rocha
-  - O Temido Map() por <a href="https://github.com/z4r4tu5tr4">Eduardo Mendes</a>
-  - GitMiner - Pesquisa Avançada no GitHub por <a href="http://github.com/danilovazb">Danilo Vaz</a>
-  - Test First por <a href="https://github.com/rg3915">Régis Silva</a>
+
+  - <strong>Dynaconf - Tá Tranquilo! Tá Configurável! por <a href="https://github.com/rochacbruno">Bruno Rocha </a></strong>
+  - <strong>O Temido Map() por <a href="https://github.com/z4r4tu5tr4">Eduardo Mendes</a></strong>
+  - <strong>GitMiner - Pesquisa Avançada no GitHub por <a href="http://github.com/danilovazb">Danilo Vaz</a></strong>
+  - <strong>Test First por <a href="https://github.com/rg3915">Régis Silva</a></strong>
 
 A palestra Dynaconf e a Test First estão sendo bem úteis e me deram algumas ideias para mudar a infra-estrutura do sistema do <strong>WP-A.CO</strong>, colocando multithreading, configurações diferenciáveis para diferentes ambientes(provavelmente com o próprio Dynaconf) e também fazendo alguns commits melhores com <strong>.gitignore</strong>. Já a palestra de Map(), trouxe algumas ideias para implementação de códigos que vocês serão capazes de ver através de meu <a href="http://www.github.com/vmesel/">GitHub</a> durante esta semana!
 
