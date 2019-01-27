@@ -2,8 +2,8 @@
 published: true
 title: Ajudando pessoas a encontrarem empregos e freelas com o PyFreelas
 layout: post
-tags: [pyfreelas, python, trampos]
-categories: [pyfreelas, python, trampos]
+tags: [pyjobs, python, trampos]
+categories: [pyjobs, python, trampos]
 permalink: pyfreelas-ajudando-pessoas
 thumbnail: https://resumewritinglab.com/blog/wp-content/uploads/2016/03/freelancing-tips.jpg
 ---
