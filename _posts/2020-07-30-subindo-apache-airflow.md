@@ -2,12 +2,18 @@
 published: true
 title: Subindo um Apache Airflow para a Amazon utilizando o ECS
 layout: post
-tags: [airflow, ecs, aws, python]
-categories: [airflow, ecs, aws, python]
+tags:
+  - airflow
+  - ecs
+  - aws
+  - python
+categories:
+  - airflow
+  - ecs
+  - aws
+  - python
 permalink: tutorial-airflow-no-ecs
 ---
-## Subindo um Apache Airflow para a Amazon utilizando o ECS
-
 Hoje em dia, cada vez menos dependemos de aplicações hospedadas em servidores específicos, podemos roda-las conteinerizadas e em ambientes serverless, assim economizamos tempo de gerenciamento de maquina e focamos realmente em entregar valor!
 
 O Airflow não é exceção, ele é um software que pode ser hospedado no AWS ECS (Elastic Container Service) via docker e nesse tutorial eu vou lhes mostrar como fazer isso!
@@ -48,5 +54,86 @@ Como vemos acima, para essa imagem rodar, precisamos fazer algumas coisas:
  - Criar um arquivo de `requirements.txt` onde ficarão todas as bibliotecas extras e necessárias para a execução dos softwares
  - Criar um arquivo de `airflow.cfg` onde fique todas as configurações do Airflow
  
+ ### Criando a pasta de DAGs
  
+ Esta é a parte mais tranquila de fazer, basta você fazer um:
+ 
+ ```
+ mkdir dags
+ ```
+ 
+ E pronto! xD
+ 
+ ### Arquivo de Chamada de Processos - entrypoint.sh
+ 
+ O arquivo de entrypoint servirá como uma base para podermos iniciar diferentes containers com diversas funções com a mesma imagem, assim conseguimos atribuir a função corretamente.
+ 
+ ```bash
+ #!/usr/bin/env bash
 
+: "${REDIS_HOST:="redis"}"
+: "${REDIS_PORT:="6379"}"
+: "${REDIS_PASSWORD:=""}"
+
+: "${POSTGRES_HOST:=""}"
+: "${POSTGRES_PORT:="5432"}"
+: "${POSTGRES_USER:=""}"
+: "${POSTGRES_PASSWORD:=""}"
+: "${POSTGRES_DB:=""}"
+: "${MONGO_DB_ATLAS_URI:=""}"
+
+# Defaults and back-compat
+: "${AIRFLOW_HOME:="/usr/local/airflow"}"
+: "${AIRFLOW__CORE__FERNET_KEY:=${FERNET_KEY:=$(python -c "from cryptography.fernet import Fernet; FERNET_KEY = Fernet.generate_key().decode(); print(FERNET_KEY)")}}"
+: "${AIRFLOW__CORE__EXECUTOR:=${EXECUTOR:-Celery}Executor}"
+
+if [ -n "$REDIS_PASSWORD" ]; then
+    REDIS_PREFIX=:${REDIS_PASSWORD}@
+else
+    REDIS_PREFIX=
+fi
+
+AIRFLOW__CELERY__BROKER_URL="redis://$REDIS_PREFIX$REDIS_HOST:$REDIS_PORT/1"
+AIRFLOW__CORE__SQL_ALCHEMY_CONN="postgresql+psycopg2://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB"
+AIRFLOW__CELERY__RESULT_BACKEND="db+postgresql://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:$POSTGRES_PORT/$POSTGRES_DB"
+
+
+export \
+  AIRFLOW_HOME \
+  AIRFLOW__CELERY__BROKER_URL \
+  AIRFLOW__CELERY__RESULT_BACKEND \
+  AIRFLOW__CORE__EXECUTOR \
+  AIRFLOW__CORE__FERNET_KEY \
+  AIRFLOW__CORE__LOAD_EXAMPLES \
+  AIRFLOW__CORE__SQL_ALCHEMY_CONN \
+
+
+# Load DAGs examples (default: Yes)
+if [[ -z "$AIRFLOW__CORE__LOAD_EXAMPLES" && "${LOAD_EX:=n}" == n ]]
+then
+  AIRFLOW__CORE__LOAD_EXAMPLES=False
+fi
+
+
+case "$1" in
+  webserver)
+    echo "INITDB"
+    airflow initdb
+    echo "CREATING USER"
+    airflow create_user -r Admin -u maisretornoadmin -e ti@maisretorno.com -f Admin -l MaisRetorno -p maisretorno
+    echo "DEPLOY DONE"
+    exec airflow webserver
+    ;;
+  scheduler|flower|version)
+    exec airflow "$@"
+    ;;
+  worker)
+    exec airflow "$@"
+    ;;
+  *)
+    # The command is something like bash, not an airflow subcommand. Just run it in the right environment.
+    exec "$@"
+    ;;
+esac
+ ```
+ 
