@@ -156,5 +156,116 @@ Recomendo você pegar este arquivo originalmente do Airflow e configurar conform
 
 ## Docker-Compose, ou como a gente vai fazer o deploy de toda essa bodega
 
+Nosso docker-compose é este:
+
+```
+version: '3'
+
+services:
+  redis:
+    image: 'redis:5.0.3'
+    command: redis-server
+
+  postgres:
+    image: postgres:10.4
+    environment:
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  webserver:
+    build: .
+    restart: always
+    build: .
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+      - FERNET_KEY=${AIRFLOW_FERNET_KEY}
+      - AIRFLOW_BASE_URL=http://localhost:8080
+      - ENABLE_REMOTE_LOGGING=False
+      - STAGE=dev
+    ports:
+        - "8080:8080"
+    command: webserver
+    healthcheck:
+      test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]
+      interval: 30s
+      timeout: 30s
+      retries: 3
+
+  flower:
+    build: .
+    restart: always
+    depends_on:
+      - redis
+      - webserver
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+      - STAGE=dev
+    ports:
+      - "5555:5555"
+    command: flower
+
+  scheduler:
+    build: .
+    restart: always
+    depends_on:
+      - webserver
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+      - FERNET_KEY=${AIRFLOW_FERNET_KEY}
+      - AIRFLOW_BASE_URL=http://localhost:8080
+      - ENABLE_REMOTE_LOGGING=False
+      - STAGE=dev
+    command: scheduler
+
+  worker:
+    build: .
+    restart: always
+    depends_on:
+      - webserver
+      - scheduler
+    volumes:
+      - ./dags:/usr/local/airflow/dags
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+      - POSTGRES_USER=airflow
+      - POSTGRES_PASSWORD=airflow
+      - POSTGRES_DB=airflow
+      - FERNET_KEY=${AIRFLOW_FERNET_KEY}
+      - AIRFLOW_BASE_URL=http://localhost:8080
+      - ENABLE_REMOTE_LOGGING=False
+      - STAGE=dev
+    command: worker
+```
 
 
