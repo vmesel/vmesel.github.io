@@ -1,5 +1,10 @@
 ---
-published: false
+published: true
+title: Subindo um Apache Airflow para a Amazon utilizando o ECS
+layout: post
+tags: [airflow, ecs, aws, python]
+categories: [airflow, ecs, aws, python]
+permalink: tutorial-airflow-no-ecs
 ---
 ## Subindo um Apache Airflow para a Amazon utilizando o ECS
 
