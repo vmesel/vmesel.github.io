@@ -6,3 +6,5 @@ url: ""
 twitter_username: vmesel
 github_username:  vmesel
 markdown: kramdown
+
+theme: jekyll-theme-minimal
