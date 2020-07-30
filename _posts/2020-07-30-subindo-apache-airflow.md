@@ -54,7 +54,9 @@ Como vemos acima, para essa imagem rodar, precisamos fazer algumas coisas:
  - Criar um arquivo de `requirements.txt` onde ficarão todas as bibliotecas extras e necessárias para a execução dos softwares
  - Criar um arquivo de `airflow.cfg` onde fique todas as configurações do Airflow
  
+ 
  ### Criando a pasta de DAGs
+ 
  
  Esta é a parte mais tranquila de fazer, basta você fazer um:
  
@@ -64,7 +66,9 @@ Como vemos acima, para essa imagem rodar, precisamos fazer algumas coisas:
  
  E pronto! xD
  
+ 
  ### Arquivo de Chamada de Processos - entrypoint.sh
+ 
  
  O arquivo de entrypoint servirá como uma base para podermos iniciar diferentes containers com diversas funções com a mesma imagem, assim conseguimos atribuir a função corretamente.
  
@@ -120,7 +124,7 @@ case "$1" in
     echo "INITDB"
     airflow initdb
     echo "CREATING USER"
-    airflow create_user -r Admin -u maisretornoadmin -e ti@maisretorno.com -f Admin -l MaisRetorno -p maisretorno
+    airflow create_user -r Admin -u USUARIO -e EMAIL@EMAIL.com -f Admin -l descricao -p SENHA1234
     echo "DEPLOY DONE"
     exec airflow webserver
     ;;
@@ -137,3 +141,20 @@ case "$1" in
 esac
  ```
  
+Mais para frente, dentro do `docker-compose.yml`, você entenderá mais sobre a utilidade deste arquivo!
+
+### Criando um arquivo de `requirements.txt` - requisitos das suas DAGs
+
+Este arquivo também é fácil de ser criado! Ele é só o conjunto de libs que você quer que seja instalado dentro do seu Airflow, porém tome cuidado sempre com as versões das libs que você está usando e se ela já vem instalada previamente no container!
+
+### Criando um arquivo de `airflow.cfg` - configurações do Airflow
+
+O arquivo `airflow.cfg` é basicamente a configuração do seu Airflow. Existem algumas coisas que você pode escolher setar, como qual executor você vai querer usar, tipos de autenticação e muitas outras configurações.
+
+Recomendo você pegar este arquivo originalmente do Airflow e configurar conforme suas necessidades!
+
+
+## Docker-Compose, ou como a gente vai fazer o deploy de toda essa bodega
+
+
+
