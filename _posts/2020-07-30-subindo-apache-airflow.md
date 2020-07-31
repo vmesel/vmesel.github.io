@@ -154,7 +154,7 @@ O arquivo `airflow.cfg` é basicamente a configuração do seu Airflow. Existem 
 Recomendo você pegar este arquivo originalmente do Airflow e configurar conforme suas necessidades!
 
 
-## Docker-Compose, ou como a gente vai fazer o deploy de toda essa bodega
+### Docker-Compose, ou como a gente vai fazer rodar localmente de toda essa bodega
 
 Nosso docker-compose é este:
 
@@ -268,4 +268,6 @@ services:
     command: worker
 ```
 
+O docker-compose servirá para você poder rodar todo o ambiente em seu ambiente localhost! Ele permite com que você link todos os containers, permitindo que eles trabalhem da mesma forma que no ECS.
 
+[Tutorial continuará em breve, caso você queira ler sobre como fazer o deploy no ECS, clique aqui!](https://towardsdatascience.com/how-to-deploy-apache-airflow-with-celery-on-aws-ce2518dbf631)
