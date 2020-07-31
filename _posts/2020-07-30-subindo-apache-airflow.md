@@ -54,23 +54,21 @@ Como vemos acima, para essa imagem rodar, precisamos fazer algumas coisas:
  - Criar um arquivo de `requirements.txt` onde ficarão todas as bibliotecas extras e necessárias para a execução dos softwares
  - Criar um arquivo de `airflow.cfg` onde fique todas as configurações do Airflow
  
+### Criando a pasta de DAGs
+
+Esta é a parte mais tranquila de fazer, basta você fazer um:
  
- ### Criando a pasta de DAGs
+```
+mkdir dags
+```
  
+E pronto! xD
  
- Esta é a parte mais tranquila de fazer, basta você fazer um:
+
+### Arquivo de Chamada de Processos - entrypoint.sh
+
  
- ```
- mkdir dags
- ```
- 
- E pronto! xD
- 
- 
- ### Arquivo de Chamada de Processos - entrypoint.sh
- 
- 
- O arquivo de entrypoint servirá como uma base para podermos iniciar diferentes containers com diversas funções com a mesma imagem, assim conseguimos atribuir a função corretamente.
+O arquivo de entrypoint servirá como uma base para podermos iniciar diferentes containers com diversas funções com a mesma imagem, assim conseguimos atribuir a função corretamente.
  
  ```bash
  #!/usr/bin/env bash
