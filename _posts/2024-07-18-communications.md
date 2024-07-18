@@ -15,7 +15,7 @@ Looking backwards, things we did previously often look awkward or shameful. My c
 
 Contributing to open source has changed my life in many aspects: added friends, jobs, titles and opportunities, but the main contribution open source is yielding me nowadays is: the necessity and improvement of my communication.
 
-When I started [talkd.ai](http://talkd.ai) with Avelino last year, we were just two friends talking on a WhatsApp chat that would go silent for days/weeks without any update from both of our sides.
+When I started [talkd.ai](http://talkd.ai) with [Avelino](https://avelino.run/about/) last year, we were just two friends talking on a WhatsApp chat that would go silent for days/weeks without any update from both of our sides.
 
 After getting to the GitHub Accelerator, we've started to gain some traction and one of the first things I've noticed is that I didn’t communicate clearly what the project did.
 
