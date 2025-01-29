@@ -82,9 +82,13 @@ Looking backwards, the perspective was different some months ago. The market was
 If you don’t want to read the whole article, here is a brief summary of what I shared here:
 
 1) Avelino is an excellent partner and open source contributor
+
 2) Buser is an amazing company (now I’m working for them and maintaining our talkd.ai instance internally)
+
 3) Github Accelerator and Universe changed my life, gave me awesome friends I’ll never forget and connections that I have never thought I would make
+
 4) The Customer Support technologies using LLMs are getting widespread, making the market rough and very competitive (race to the bottom is not my type of strategy)
+
 5) I didnt find a quite good PMF with my experience and knowledge
 
 ## Is talkd.ai dying?
