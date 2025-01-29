@@ -1,11 +1,11 @@
 ---
-published: false
+published: true
 title: Reflections on a failed Open Source Startup
 layout: post
 tags: [open source, startups]
 categories: [open source, startups]
 permalink: failured-open-source-startup
-thumbnail: 
+thumbnail: /assets/imgs/prompt-engineering.jpg
 ---
 
 Open source startups are not a new concept: free and open source software have been around since the 90s and have been improving frequently on quality and delivery.
@@ -37,6 +37,8 @@ Being part of such an amazing cohort made me realize that open source can bring 
 This whole connection and group setting enabled me to get a nice overview on the international landscape and how far behind we are in Brazil and how we can advance the knowledge locally.
 
 ## Github Universe connected everything together
+
+<img src="/assets/imgs/github-universe.jpg" alt="Me on the entrance to GitHub Universe">
 
 Being brief here, Github Universe enabled me to connect all of the dots from the past to the moment.
 
