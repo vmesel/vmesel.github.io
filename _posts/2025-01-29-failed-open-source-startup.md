@@ -10,7 +10,7 @@ thumbnail:
 
 Open source startups are not a new concept: free and open source software have been around since the 90s and have been improving frequently on quality and delivery.
 
-I’ve started talkd.ai as a chance of starting a new company, a new entrepreneurial journey where I would be leading a new approach on customer support and frequently asked questions (the original name that I had given to the project was FAQtor, but [Avelino](https://avelino.run/) convinced me it was a lame name and talkd.ai would be better).
+I’ve started talkd.ai as a chance of starting a new company, a new entrepreneurial journey where I would be leading a new approach on customer support and frequently asked questions (the original name that I had given to the project was FAQtor, but [Avelino (the current Buser CTO and a long time friend)](https://avelino.run/) convinced me it was a lame name and talkd.ai would be better).
 
 We've failed achieving our goal of becoming an open source startup, but yet our open source software is still here (and is here to stay as long as we have necessities around it).
 
@@ -30,7 +30,7 @@ In this operation, we were able to fully respond over 3 thousand support tickets
 
 Seriously, Github Accelerator was incredible, it gave me a lot of confidence and feeling that we had a very solid solution for a suboptimized market.
 
-Gregg and Kevin were super friendly and helped us a lot during the whole accelerator, they brought all of their know how and talent from previous business/investments.
+Gregg and Kevin (program managers at Github Accelerator who lead us and helped us achieve our wildest open source dreams) were super friendly and helped us a lot during the whole accelerator, they brought all of their know how and talent from previous business/investments.
 
 Being part of such an amazing cohort made me realize that open source can bring you to collab with multiple awesome people working on different technologies. Namee from LLMWare is using amazing techniques to optimize SLMs on CPUs; Daniel and Michael from Unsloth are rocking grounds in the Valley; Diego is improving the VR scene with A-Frame and AI integrations; Jurgen and Andreas are rocking and hacking lots of servers with hackingbuddygpt; Alicia is doing some amazing work on InfoSec information; Michael from Langdrive is working on amazing mortgage brokerage tech; Tim and his sweet open source work on OpenWebUI is amazing and Marimo is… well, Marimo! Akshay and Myles are excellent engineers.
 
