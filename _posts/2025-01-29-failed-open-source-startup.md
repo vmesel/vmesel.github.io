@@ -1,4 +1,12 @@
-# Reflections on a failed Open Source Startup
+---
+published: false
+title: Reflections on a failed Open Source Startup
+layout: post
+tags: [open source, startups]
+categories: [open source, startups]
+permalink: failured-open-source-startup
+thumbnail: 
+---
 
 Open source startups are not a new concept: free and open source software have been around since the 90s and have been improving frequently on quality and delivery.
 
