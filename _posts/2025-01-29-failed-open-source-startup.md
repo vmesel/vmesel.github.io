@@ -84,7 +84,8 @@ If you don’t want to read the whole article, here is a brief summary of what I
 3) Github Accelerator and Universe changed my life, gave me awesome friends I’ll never forget and connections that I have never thought I would make
 4) The Customer Support technologies using LLMs are getting widespread, making the market rough and very competitive (race to the bottom is not my type of strategy)
 5) I didnt find a quite good PMF with my experience and knowledge
-Is talkd.ai dying?
+
+## Is talkd.ai dying?
 
 No! It’s not! We are still up, running and proud to be open source.
 
