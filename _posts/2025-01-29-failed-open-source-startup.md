@@ -10,9 +10,11 @@ thumbnail:
 
 Open source startups are not a new concept: free and open source software have been around since the 90s and have been improving frequently on quality and delivery.
 
-I’ve started talkd.ai as a chance of starting a new company, a new entrepreneurial journey where I would be leading a new approach on customer support and frequently asked questions (the original name that I had given to the project was FAQtor, but Avelino convinced me it was a lame name and talkd.ai would be better).
+I’ve started talkd.ai as a chance of starting a new company, a new entrepreneurial journey where I would be leading a new approach on customer support and frequently asked questions (the original name that I had given to the project was FAQtor, but [Avelino](https://avelino.run/) convinced me it was a lame name and talkd.ai would be better).
 
-Looking through the positive lenses:
+We've failed achieving our goal of becoming an open source startup, but yet our open source software is still here (and is here to stay as long as we have necessities around it).
+
+Looking through the positive lenses, here are some outputs from this whole journey:
 
 ## Getting Buser to test my solution
 
