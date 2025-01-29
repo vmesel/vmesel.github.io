@@ -4,7 +4,7 @@ title: Reflections on a failed Open Source Startup
 layout: post
 tags: [open source, startups]
 categories: [open source, startups]
-permalink: failured-open-source-startup
+permalink: failed-open-source-startup
 thumbnail: /assets/imgs/prompt-engineering.jpg
 ---
 
