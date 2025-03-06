@@ -1,10 +1,10 @@
 ---
 published: true
-title: AI and Software Engineering Careers - How I guess everything will change
+title: Use suas próprias ferramentas no Cursor com MCP
 layout: post
-tags: [ai, career, software engineering]
+tags: [ai, software engineering]
 categories: [ai, software engineering]
-permalink: ai-and-software-engineering-careers
+permalink: use-suas-ferramentas-no-cursor-com-mcp
 thumbnail: /assets/imgs/prompt-engineering.jpg
 ---
 
